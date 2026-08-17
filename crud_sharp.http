@@ -1,0 +1,120 @@
+@crud_sharp_HostAddress = http://localhost:5251
+
+### Health
+GET {{crud_sharp_HostAddress}}/health/
+Accept: application/json
+
+### ===== EMPLOYEE (db: iss) =====
+
+### Get employees (paginated)
+GET {{crud_sharp_HostAddress}}/api/employee/?page=1&pageSize=50
+Accept: application/json
+
+### Search employees by name/badge
+GET {{crud_sharp_HostAddress}}/api/employee/?page=1&pageSize=20&search=budi
+Accept: application/json
+
+### Get employee by id
+GET {{crud_sharp_HostAddress}}/api/employee/1
+Accept: application/json
+
+### Create employee
+POST {{crud_sharp_HostAddress}}/api/employee/
+Content-Type: application/json
+
+{
+  "badgeNo": "EMP001",
+  "name": "Budi Santoso",
+  "companyId": 1,
+  "projectId": 1,
+  "deptId": 1,
+  "designation": "Software Engineer",
+  "statusActive": 1,
+  "createdBy": "admin"
+}
+
+### Update employee
+PUT {{crud_sharp_HostAddress}}/api/employee/1
+Content-Type: application/json
+
+{
+  "badgeNo": "EMP001",
+  "name": "Budi Santoso Update",
+  "companyId": 1,
+  "projectId": 1,
+  "deptId": 1,
+  "designation": "Senior Software Engineer",
+  "statusActive": 1,
+  "updatedBy": "admin"
+}
+
+### Soft-delete employee (sets deleted_date)
+DELETE {{crud_sharp_HostAddress}}/api/employee/1?deletedBy=admin
+
+### ===== MASTER COMPANY (db: portal) =====
+
+### Get all companies
+GET {{crud_sharp_HostAddress}}/api/company/
+Accept: application/json
+
+### Create company
+POST {{crud_sharp_HostAddress}}/api/company/
+Content-Type: application/json
+
+{
+  "companyName": "PT Maju Jaya",
+  "statusActive": 1,
+  "createdBy": "admin"
+}
+
+### Update company
+PUT {{crud_sharp_HostAddress}}/api/company/1
+Content-Type: application/json
+
+{
+  "companyName": "PT Maju Jaya Tbk",
+  "statusActive": 1,
+  "updatedBy": "admin"
+}
+
+### Delete company
+DELETE {{crud_sharp_HostAddress}}/api/company/1
+
+### ===== MASTER DEPT (db: portal) =====
+
+### Get all depts
+GET {{crud_sharp_HostAddress}}/api/dept/
+Accept: application/json
+
+### Create dept
+POST {{crud_sharp_HostAddress}}/api/dept/
+Content-Type: application/json
+
+{
+  "deptName": "Engineering",
+  "statusActive": 1,
+  "createdBy": "admin"
+}
+
+### Delete dept
+DELETE {{crud_sharp_HostAddress}}/api/dept/1
+
+### ===== MASTER PROJECT (db: portal) =====
+
+### Get all projects
+GET {{crud_sharp_HostAddress}}/api/project/
+Accept: application/json
+
+### Create project
+POST {{crud_sharp_HostAddress}}/api/project/
+Content-Type: application/json
+
+{
+  "projectCode": "PRJ-001",
+  "projectName": "ERP Implementation",
+  "statusActive": 1,
+  "createdBy": "admin"
+}
+
+### Delete project
+DELETE {{crud_sharp_HostAddress}}/api/project/1

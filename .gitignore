@@ -1,0 +1,56 @@
+## Visual Studio / dotnet / MSBuild
+bin/
+obj/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+bld/
+[Bb]in/
+[Ob]j/
+Log/
+Logs/
+
+## Visual Studio Cache and Settings
+.vs/
+.vscode/
+*.user
+*.userosscache
+*.suo
+*.userprefs
+*.docstates
+*.suo
+*.csproj.user
+*.user
+*.sln.docstates
+*.dbmdl
+*.aps
+
+## User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+## Mono/Rider/Resharper
+.idea/
+*.sln.iml
+.resharper*
+*.user
+
+## Publishing / Packaging
+*.publish.xml
+*.pubxml
+*.pubxml.user
+
+## OS Files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+
+## EF Core Migrations Tooling / Local secrets
+appsettings.local.json
+secrets.json
+.microsoft.dotnet.keyvalues.json
